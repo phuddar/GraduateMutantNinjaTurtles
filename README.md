@@ -2,6 +2,7 @@
 Ready to bash our opponents<<<<<<< dev-jakejose
 # MSIS
 
-## Jacob Joseph=======
-#MSIS
-#phuddar's first commit>>>>>>> main
+## Jacob Joseph
+jjbogner
+#phuddar's first commit
+
