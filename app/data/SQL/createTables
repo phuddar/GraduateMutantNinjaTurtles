@@ -1,0 +1,32 @@
+CREATE TABLE Referee(
+   Referee_ID int NOT NULL AUTO_INCREMENT,
+   fname varchar(255),
+   lname varchar(255) NOT NULL,
+   age int,
+   Referee_grade (int),
+   Assignment_status varchar(255),
+   Referee_skill_rating int,
+   PRIMARY KEY(Referee_ID,lname)
+);
+
+CREATE TABLE Game(
+   Game_ID int NOT NULL AUTO_INCREMENT,
+   Game_Time time,
+   Game_Date date,
+   Game_Field varchar(255),
+   Referee_ID int,
+   PRIMARY KEY(Game_ID),
+   FOREIGN KEY(Referee_ID) REFERENCES Referee(Referee_ID)
+);
+
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (1, 'Demott', 'Bolingbroke', 49, 4, false, 2);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (2, 'Claudelle', 'Sigward', 83, 1, false, 7);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (3, 'Winston', 'Jobe', 97, 5, false, 5);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (4, 'Yancy', 'Cressingham', 74, 5, true, 2);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (5, 'Bette-ann', 'Kingsmill', 67, 5, false, 8);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (6, 'Alida', 'Deble', 88, 2, false, 2);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (7, 'Rouvin', 'Zapata', 44, 2, false, 6);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (8, 'Josey', 'Ivory', 38, 4, false, 4);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (9, 'Gusta', 'Fitzharris', 53, 5, false, 8);
+insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (10, 'Mannie', 'O''Doireidh', 58, 3, true, 7);
+
