@@ -54,83 +54,73 @@
 
   <div id='refereeGame' class='container'>
 
-    <div class='row align-items-start'>
+    <div class='row'>
+      <div class="col-8">
 
-      <div class='col col-3'>
-        <div class="list-group">
-          <div v-for='i in refs' v-on:click='selectRef(i)'
-            :class="['ref', {selected: selectRef && i.Game_ID == curID.Game_ID}]">
-            <button type="button" class="list-group-item list-group-item-action">
-              <span class='id'>ID: {{ i.Game_ID }}</span><br>
-              <span class='id'>Field: {{ i.Game_Field }}</span><br>
-              <span class='id'>Date {{ i.Game_Date }}</span><br>
-              <span class='id'>Time: {{ i.Game_Time }}</span><br>
-          </div>
-        </div>
       </div>
-
-
-      <div class='col col-8' v-if='selectRef'>
-        <div id='gameTable'>
+      <div class="col-8">
+        <div id='refTable'>
           <table class='table'>
             <thead>
               <tr>
-                <th>Referee_ID</th>
-                <th>fname</th>
-                <th>lname</th>
-                <th>age</th>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
                 <th>Grade</th>
-                <th>Assignment</th>
+                <th>Status</th>
                 <th>Skill Rating</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for='g in games'>
-                <td>{{ g.Referee_ID }}</td>
-                <td>{{ g.fname }}</td>
-                <td>{{ g.lname }}</td>
-                <td>{{ g.age }}</td>
-                <td>{{ g.Referee_grade }}</td>
-                <td>{{ g.Assignment_status }}</td>
-                <td>{{ g.Referee_skill_rating }}</td>
+              <tr v-for='r in refs'>
+                <td>{{ r.Referee_ID }}</td>
+                <td>{{ r.fname }}</td>
+                <td>{{ r.lname }}</td>
+                <td>{{ r.age }}</td>
+                <td>{{ r.Referee_grade }}</td>
+                <td>{{ r.Assignment_status }}</td>
+                <td>{{ r.Referee_skill_rating }}</td>
+                
               </tr>
             </tbody>
           </table>
 
         </div>
-        <div class='row'>
-          <div class="col col-4">
-            <div id='apis'>
-              <div class="card" style="width: 10rem;">
-                <img v-bind:src='weather.current.condition.icon' class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Weather in {{ weather.location.name }}</h5>
-                  <p class="card-text">Condition: {{weather.current.condition.text}}</p>
-                  <p class="card-text">Temperature: {{weather.current.temp_c}} C</p>
-                  <p class="card-text">Real Feel: {{weather.current.feelslike_c}} C</p>
-                  <a href="https://weather.com/weather/tenday/l/London+England+United+Kingdom?canonicalCityId=a4cb96aeab4c5bbc8f739c9195747c0abd46dbe68a101384f78303da71c0f417"
-                    class="btn btn-primary">View More at Weather.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6">
-            
-            
-            <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-width: 25rem; max-height: 25rem;">
-              <div v-for='f in feed'>
-                <div class="card" style="width: 18rem;">
-                  <img v-bind:src='f.strThumb' class="card-img-top">
-                  <div class="card-body">
-                    <p class="card-text">{{ f.strFilename }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </div>
+        <div id='gameTable'>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Field</th>
+                <th>Referee 1</th>
+                <th>Referee 2</th>
+                <th>Referee 3</th>
+                <th>Referee 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for='g in games'>
+                <td>{{ g.Game_ID }}</td>
+                <td>{{ g.Game_Time }}</td>
+                <td>{{ g.Game_Date }}</td>
+                <td>{{ g.Game_Field }}</td>
+                <td>{{ g.Referee_1 }}</td>
+                <td>{{ g.Referee_2 }}</td>
+                <td>{{ g.Referee_3 }}</td>
+                <td>{{ g.Referee_4 }}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+
         </div>
       </div>
+
+      
     </div>
   </div>
 
@@ -152,7 +142,7 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 
-  <script src="js/gameData.js"></script>
+  <script src="js/directoryData.js"></script>
 </body>
 
 </html>
