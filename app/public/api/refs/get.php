@@ -6,14 +6,18 @@ require 'class/DbConnection.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Game';
+$sql = 'SELECT * FROM Referees';
 $vars = [];
 
 if (isset($_GET['ref'])) {
     // This is an example of a parameterized query
     //echo 'working working working working working';
-    $sql = 'SELECT * FROM Game 
-    WHERE ? IN (Referee_1, Referee_2, Referee_3, Referee_4)';
+    $sql = 'SELECT r.Referee_ID, r.fname, r.lname, r.age, r.Referee_Grade, r.Assignment_status,r.Referee_skill_rating 
+    FROM Referees AS r
+    INNER JOIN Game
+    ON r.Referee_ID = Game.Referee_1
+    OR r.Referee_ID = Game.Referee_2
+    WHERE Game.Game_ID = ?';
   
     //NOT THIS WAY
     // $sql = 'SELECT * FROM offer WHERE studentId = ' . $_GET['student'];

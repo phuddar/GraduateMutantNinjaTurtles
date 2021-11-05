@@ -43,7 +43,7 @@
           </li>
         </ul>
         <span class="navbar-text">
-          Football Referee & Games Page | Status
+          Football Referee & Games Page | Games
         </span>
       </div>
     </div>
@@ -56,10 +56,12 @@
       <div class='col col-3'>
         <div class="list-group">
           <div v-for='i in refs' v-on:click='selectRef(i)'
-            :class="['ref', {selected: selectRef && i.Referee_ID == curID.Referee_ID}]">
+            :class="['ref', {selected: selectRef && i.Game_ID == curID.Game_ID}]">
             <button type="button" class="list-group-item list-group-item-action">
-              <span class='first'>{{ i.fname }}</span><br>
-              <span class='last'>{{ i.lname }}</span></button>
+              <span class='id'>ID: {{ i.Game_ID }}</span><br>
+              <span class='id'>Field: {{ i.Game_Field }}</span><br>
+              <span class='id'>Date {{ i.Game_Date }}</span><br>
+              <span class='id'>Time: {{ i.Game_Time }}</span><br>
           </div>
         </div>
       </div>
@@ -70,18 +72,24 @@
           <table class='table'>
             <thead>
               <tr>
-                <th>Game Number</th>
-                <th>Game Time</th>
-                <th>Game Date</th>
-                <th>Game Field</th>
+                <th>Referee_ID</th>
+                <th>fname</th>
+                <th>lname</th>
+                <th>age</th>
+                <th>Grade</th>
+                <th>Assignment</th>
+                <th>Skill Rating</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for='g in games'>
-                <td>{{ g.Game_ID }}</td>
-                <td>{{ g.Game_Time }}</td>
-                <td>{{ g.Game_Date }}</td>
-                <td>{{ g.Game_Field }}</td>
+                <td>{{ g.Referee_ID }}</td>
+                <td>{{ g.fname }}</td>
+                <td>{{ g.lname }}</td>
+                <td>{{ g.age }}</td>
+                <td>{{ g.Referee_grade }}</td>
+                <td>{{ g.Assignment_status }}</td>
+                <td>{{ g.Referee_skill_rating }}</td>
               </tr>
             </tbody>
           </table>
@@ -141,7 +149,7 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 
-  <script src="js/data.js"></script>
+  <script src="js/gameData.js"></script>
 </body>
 
 </html>
