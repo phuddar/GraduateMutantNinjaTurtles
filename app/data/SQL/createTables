@@ -14,9 +14,15 @@ CREATE TABLE Game(
    Game_Time time,
    Game_Date date,
    Game_Field varchar(255),
-   Referee_ID int,
+   Referee_1 int,
+   Referee_2 int,
+   Referee_3 int,
+   Referee_4 int
    PRIMARY KEY(Game_ID),
-   FOREIGN KEY(Referee_ID) REFERENCES Referee(Referee_ID)
+   FOREIGN KEY(Referee_1) REFERENCES Referee(Referee_ID),
+   FOREIGN KEY(Referee_2) REFERENCES Referee(Referee_ID),
+   FOREIGN KEY(Referee_3) REFERENCES Referee(Referee_ID),
+   FOREIGN KEY(Referee_4) REFERENCES Referee(Referee_ID)
 );
 
 insert into Referees (Referee_ID, fname, lname, age, Referee_grade, Assignment_status, Referee_skill_rating) values (1, 'Demott', 'Bolingbroke', 49, 4, false, 2);
