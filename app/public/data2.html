@@ -11,8 +11,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://unpkg.com/vue@next"></script>
-  <title>Football Referee & Games Page</title>
-  <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+  <title>Hello, world!</title>
 </head>
 
 <body>
@@ -79,41 +78,13 @@
               </tr>
             </tbody>
           </table>
-
+          <h1>Hello</h1>
         </div>
-        <div class='row'>
-          <div class="col col-4">
-            <div id='apis'>
-              <div class="card" style="width: 10rem;">
-                <img v-bind:src='weather.current.condition.icon' class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Weather in {{ weather.location.name }}</h5>
-                  <p class="card-text">Condition: {{weather.current.condition.text}}</p>
-                  <p class="card-text">Temperature: {{weather.current.temp_c}} C</p>
-                  <p class="card-text">Real Feel: {{weather.current.feelslike_c}} C</p>
-                  <a href="https://weather.com/weather/tenday/l/London+England+United+Kingdom?canonicalCityId=a4cb96aeab4c5bbc8f739c9195747c0abd46dbe68a101384f78303da71c0f417"
-                    class="btn btn-primary">View More at Weather.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-            <div class="col col-4">
-              <div v-for='f in feed'>
-                <div class="card" style="width: 18rem;">
-                  <img v-bind:src='f.strThumb' class="card-img-top">
-                  <div class="card-body">
-                    <p class="card-text">{{ f.strFilename }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
+        
       </div>
+      
     </div>
-  </div>
-
-  </div>
-
+    
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
