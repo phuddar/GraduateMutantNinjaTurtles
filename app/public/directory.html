@@ -160,11 +160,11 @@
         <form v-on:submit.prevent="postGame">
           <div class="mb-3">
             <label for="Game_Time" class="form-label">Game_Time</label>
-            <input type="text" class="form-control" id="Game_Time"  v-model="gameForm.Game_Time"/>
+            <input type="time" class="form-control" id="Game_Time"  v-model="gameForm.Game_Time"/>
           </div>
           <div class="mb-3">
             <label for="Game_Date" class="form-label">Game_Date</label>
-            <input type="text" class="form-control" id="Game_Date"  v-model="gameForm.Game_Date"/>
+            <input type="date" class="form-control" id="Game_Date"  v-model="gameForm.Game_Date"/>
           </div>
           <div class="mb-3">
             <label for="Game_Field" class="form-label">Game_Field</label>
