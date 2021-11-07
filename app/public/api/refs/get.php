@@ -17,6 +17,8 @@ if (isset($_GET['ref'])) {
     INNER JOIN Game
     ON r.Referee_ID = Game.Referee_1
     OR r.Referee_ID = Game.Referee_2
+    OR r.Referee_ID = Game.Referee_3
+    OR r.Referee_ID = Game.Referee_4
     WHERE Game.Game_ID = ?';
   
     //NOT THIS WAY

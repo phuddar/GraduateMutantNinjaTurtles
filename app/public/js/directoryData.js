@@ -4,9 +4,9 @@ const SomeApp = {
       refs: {},
       curID: [],
       games: [],
-      current: {},
       refForm: {},
-      check: "NO",
+      gameForm: {},
+      check: "NO"
     };
   },
   computed: {},
@@ -35,6 +35,7 @@ const SomeApp = {
         .then((responseJson) => {
           this.games = responseJson;
           //   console.log(this.games);
+            this.resetGameForm();
         })
         .catch((err) => {
           console.error(err);
@@ -106,7 +107,73 @@ const SomeApp = {
     resetRefForm() {
       this.refForm = {};
       this.check = "NO";
-    }
+    },
+    selectedGame(g) {
+        this.gameForm = g;
+        this.check = "YES";
+    },
+    postGame(evt) {
+        if (this.check == "NO") {
+            this.postNewGame(evt);
+          } else {
+            this.postEditGame(evt);
+          }
+    },
+    postNewGame(evt) {
+        this.gameForm.Game_ID = this.games.length + 1;
+        console.log("Posting!", this.gameForm);
+
+        fetch("api/games/create.php", {
+          method: "POST",
+          body: JSON.stringify(this.gameForm),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            Accept: "application/json",
+          },
+        })
+          .then((next) => {
+            this.generateGame();
+          })
+          .catch((err) => console.error(err));
+      },
+      postEditGame(evt) {
+        console.log("hello");
+        console.log(this.gameForm);
+        console.log("Posting!", this.gameForm);
+
+        fetch("api/games/update.php", {
+          method: "POST",
+          body: JSON.stringify(this.gameForm),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            Accept: "application/json",
+          },
+        })
+          .then((next) => {
+            this.generateGame();
+          })
+          .catch((err) => console.error(err));
+      },
+        deleteGame(g) {
+            console.log("Deleting!", g);
+
+            fetch("api/games/delete.php", {
+              method: "POST",
+              body: JSON.stringify(g),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                Accept: "application/json",
+              },
+            })
+              .then((next) => {
+                this.generateGame();
+              })
+              .catch((err) => console.error(err));
+            },
+            resetGameForm() {
+                this.gameForm = {};
+                this.check = "NO";
+            }
   },
   created() {
     this.getRefData();

@@ -145,12 +145,49 @@
                 <td>{{ g.Referee_2 }}</td>
                 <td>{{ g.Referee_3 }}</td>
                 <td>{{ g.Referee_4 }}</td>
+                <td>
+                  <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="selectedGame(g)">Edit</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="deleteGame(g)">Delete</button>
+                </td>
                 
               </tr>
             </tbody>
           </table>
 
         </div>
+        <form v-on:submit.prevent="postGame">
+          <div class="mb-3">
+            <label for="Game_Time" class="form-label">Game_Time</label>
+            <input type="text" class="form-control" id="Game_Time"  v-model="gameForm.Game_Time"/>
+          </div>
+          <div class="mb-3">
+            <label for="Game_Date" class="form-label">Game_Date</label>
+            <input type="text" class="form-control" id="Game_Date"  v-model="gameForm.Game_Date"/>
+          </div>
+          <div class="mb-3">
+            <label for="Game_Field" class="form-label">Game_Field</label>
+            <input type="text" class="form-control" id="Game_Field"  v-model="gameForm.Game_Field"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_1" class="form-label">Referee_1</label>
+            <input type="text" class="form-control" id="Referee_1" v-model="gameForm.Referee_1"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_2" class="form-label">Referee_2</label>
+            <input type="text" class="form-control" id="Referee_2" v-model="gameForm.Referee_2"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_3" class="form-label">Referee_3</label>
+            <input type="text" class="form-control" id="Referee_3" v-model="gameForm.Referee_3"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_4" class="form-label">Referee_4</label>
+            <input type="text" class="form-control" id="Referee_4" v-model="gameForm.Referee_4"/>
+          </div>
+          <button id = 'submit' type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
 
       
