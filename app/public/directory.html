@@ -46,7 +46,7 @@
           </li>
         </ul>
         <span class="navbar-text">
-          Football Referee & Games Page | Games
+          Football Referee & Games Page | Directory
         </span>
       </div>
     </div>
@@ -81,12 +81,45 @@
                 <td>{{ r.Referee_grade }}</td>
                 <td>{{ r.Assignment_status }}</td>
                 <td>{{ r.Referee_skill_rating }}</td>
-                
+                <td>
+                  <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="selectedRef(r)">Edit</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="deleteRef(r)">Delete</button>
+                </td>
               </tr>
             </tbody>
           </table>
 
         </div>
+        <form v-on:submit.prevent="postRef">
+          <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname"  v-model="refForm.fname"/>
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname"  v-model="refForm.lname"/>
+          </div>
+          <div class="mb-3">
+            <label for="age" class="form-label">age</label>
+            <input type="text" class="form-control" id="age"  v-model="refForm.age"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_grade" class="form-label">Referee_grade</label>
+            <input type="text" class="form-control" id="Referee_grade" v-model="refForm.Referee_grade"/>
+          </div>
+          <div class="mb-3">
+            <label for="Assignment_status" class="form-label">Assignment_status</label>
+            <input type="text" class="form-control" id="Assignment_status" v-model="refForm.Assignment_status"/>
+          </div>
+          <div class="mb-3">
+            <label for="Referee_skill_rating" class="form-label">Referee_skill_rating</label>
+            <input type="number" class="form-control" id="Referee_skill_rating" v-model="refForm.Referee_skill_rating"/>
+          </div>
+          <button id = 'submit' type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
 
         <div id='gameTable'>
           <table class='table'>
