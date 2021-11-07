@@ -13,7 +13,9 @@
   <script src="https://unpkg.com/vue@next"></script>
   <title>Football Referee & Games Page</title>
   <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -50,6 +52,62 @@
     </div>
   </nav>
 
+  <main role="main">
+    <!-- https://getbootstrap.com/docs/4.0/examples/jumbotron/ -->
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class='row'>
+          <h1 class="display-3">Team 19 D&S Final Project</h1>
+          <p>Welcome to our final project! We hope you enjoy our solution.</p>
+          <p><a class="btn btn-primary btn-lg" href="https://github.com/phuddar/GraduateMutantNinjaTurtles"
+              role="button"><i class="fab fa-github"></i> Check out Our Github &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Referee Status Page</h2>
+          <p>View the referee roster by name and see which games they have been assigned to. Also, check out
+            the weather and upcoming professional games via our API connections </p>
+          <p><a class="btn btn-secondary" href="status.html" role="button">Go to Page &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+          <h2>Reports</h2>
+          <p>Generate specfic queries that you would like to download as CSV files! </p>
+          <p><a class="btn btn-secondary" href="reports.html" role="button">Go to Page &raquo;</a></p>
+          <div style="width:200px;height: 200px;;padding:10px;position:relative;"><iframe
+            src="https://giphy.com/embed/BCdUjzHlCtrGdcFkTV" width="100%" height="100%" style="position:absolute"
+            frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+        <p><a href="https://giphy.com/gifs/soccer-sport-BCdUjzHlCtrGdcFkTV">via GIPHY</a></p>
+        </div>
+        <div class="col-md-3">
+          <h2>Games View</h2>
+          <p>Check out the games we have within our database and the referees who are currently assigned to work them.
+          </p>
+          <p><a class="btn btn-secondary" href="games.html" role="button">Go to Page &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+          <h2>Directory</h2>
+          <p>A full view of the referees and games within our database. Authorized users can make changes to this
+            information if they need to!</p>
+          <p><a class="btn btn-secondary" href="games.html" role="button">Go to Page &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+  <footer class="container">
+    <p>&copy; MSIS Team 19 2022</p>
+  </footer>
+
+
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -64,7 +122,7 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 
-  <script src="js/data.js"></script>
+  <!-- <script src="js/data.js"></script> -->
 </body>
 
 </html>
