@@ -13,7 +13,9 @@
   <script src="https://unpkg.com/vue@next"></script>
   <title>Football Referee & Games Page</title>
   <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -39,6 +41,9 @@
           <li class="nav-item">
             <a class="nav-link" href="games.html">Games</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directory.html">Directory</a>
+          </li>
         </ul>
         <span class="navbar-text">
           Football Referee & Games Page | Reports
@@ -47,7 +52,46 @@
     </div>
   </nav>
 
-  
+  <!-- Main Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3>Reports</h3>
+          </div>
+          <div class="card-body">
+            <div id='reportApp'>
+              <div class="row">
+                <!-- center align reference:
+                https://stackoverflow.com/questions/35163164/how-to-center-content-in-a-bootstrap-column -->
+                <div class="col col-6" align = 'center'>
+                  <div class="mb-3">
+                    <label for="Game_Date1" class="form-label">Game_Date1</label>
+                    <input type="date" class="form-control" id="Game_Date1" v-model="reportForm1.Game_Date1" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="Game_Date2" class="form-label">Game_Date2</label>
+                    <input type="date" class="form-control" id="Game_Date2" v-model="reportForm1.Game_Date2" />
+                  </div>
+                  <button class="btn btn-primary" @click="getReport1">Set Dates</button><br>
+                  <a id='download' v-bind:href="newhref" download><button type="button" class="btn btn-success">Generate
+                      Report</button></a>
+                </div>
+                <div class="col col-6" align = 'center'>
+                  <h1>Future Games Missing Referees</h1>
+                  <button class="btn btn-primary" @click="getReport2">Fetch Data</button><br>
+                  <a id='download1' v-bind:href="newhref" download><button type="button" class="btn btn-success">Generate
+                      Report</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -63,7 +107,7 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 
-  <script src="js/data.js"></script>
+  <script src="js/reportsData.js"></script>
 </body>
 
 </html>
